@@ -23,10 +23,14 @@ while (line=STDIN.gets) do
     
     period_timeslot = Time.now.to_i/period
     data = line.strip.split(" ")
+
+    # Output splitted data for DEBUG
+    p data
+
     #len = data.length
     #next if ( len == 0 )
     #end
-    if (len != 0 )then
+    if (data.length != 0 )then
     src = data[2].split(".")[0,4]
     dst = data[3].split(".")[0,4]
     
@@ -47,6 +51,7 @@ while (line=STDIN.gets) do
             list_query[src][data[7]] = 0
         end
         list_query[src][data[7]] += 1
+    end
     end
     
     # Check timeslot for controlling output timing
