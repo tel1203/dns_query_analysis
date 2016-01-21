@@ -15,6 +15,7 @@ end
 # Period in sec for result output
 period=10
 last_timeslot = Time.now.to_i/period
+printf("  %s\t\t   %s\t\t%s\t  %s\t    %s\t\n","Time","Source IP","Count","Destination", "Query type")
 while (line=STDIN.gets) do
   # The data contains tcpdump output as below.
   # Ex:
@@ -62,7 +63,7 @@ while (line=STDIN.gets) do
     #p list_query
     #p count_query
   	print time, count_query, dst, mask
-  	p ""
+  	puts()
   end
   last_timeslot = period_timeslot
   	
